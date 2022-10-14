@@ -38,38 +38,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        
-        {/* display authtoken field if response from server found */}
-        {info.authToken !== "" && (
-          <div style={{ backgroundColor: "white", width: "50%", color: "black" }}>
-            
-            {/* ------------------------------------- */}
-            {/* display account info */}
-            <pre
-              style={{
-                textAlign: "left",
-                paddingLeft: "15px",
-                fontSize: "1rem",
-                wordWrap: "break-word",
-                wordBreak: "break-all",
-                whiteSpace: "pre-wrap",
-              }}
-            >
-              {info.accountInfo}
-              <br />
-
-            {/* ------------------------------------- */}
-            {/* display auth token */}
-            Authentication token: {info.authToken}
-            </pre>
-          </div>
-        )}
-
         {/* display error if no auth token */}
         {info.authToken === "" && (
           <div>
-            <p>We're getting your account information</p>
+            <p>View Vaccine Demo in Developers Tools Console Log: CMD + SHIFT + J for Chrome, Edge</p>
           </div>
         )}
       </header>
