@@ -102,7 +102,7 @@ export async function vaccineDemo() {
     );
     // }
 
-		console.log("store Credential Proof", proofResponse);
+		// console.log("store Credential Proof", proofResponse);
 
     // verifyCredential() {
     // The airline verifies the credential
