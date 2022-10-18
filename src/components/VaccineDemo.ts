@@ -67,7 +67,7 @@ export async function vaccineDemo() {
 
 
 
-    // Sign a credential as the clinic and send it to Allison
+    // ** Sign a credential as the clinic and send it to Allison
     trinsic.options.authToken = clinic;
     const issueResponse = await trinsic.credential().issueFromTemplate(
         IssueFromTemplateRequest.fromPartial({
@@ -77,8 +77,19 @@ export async function vaccineDemo() {
     );
     // }
 
+    // noluvuyo 
+    // combine issueResponse object string into qr code
+    // generate qr code for mackaylan to store credentail
+    // qr code = url http://trinsic/{asjdklasjd12n3mldas}<JSON String>
+        // insert JSON into url string
+
 		console.log("issue Credential", issueResponse);
 
+
+    // qr code = url http://trinsic/{asjdklasjd12n3mldas}<JSON String>
+        // extract certain value from url related to issueResponse.documentJson
+    // mackaylan 
+    // to extract from qrcode issueResponse.documentJson
 
     // storeCredential() {
     // Alice stores the credential in her cloud wallet.
@@ -89,6 +100,7 @@ export async function vaccineDemo() {
         })
     );
     // }
+
 
 		console.log("store Credential", insertResponse);
 
@@ -102,7 +114,7 @@ export async function vaccineDemo() {
     );
     // }
 
-		// console.log("store Credential Proof", proofResponse);
+    console.log("store Credential Proof", proofResponse);
 
     // verifyCredential() {
     // The airline verifies the credential
@@ -114,7 +126,7 @@ export async function vaccineDemo() {
     );
     // }
 
-		console.log("verify Credential Proof", verifyResponse);
+    console.log("verify Credential Proof", verifyResponse);
 
 
     return verifyResponse;
