@@ -13,6 +13,8 @@ import {
 		ServiceOptions
 } from "@trinsic/trinsic/browser";
 
+
+
 const options = ServiceOptions.fromPartial({
 			serverEndpoint: "dev-internal.trinsic.cloud",
 			serverPort: 443,
@@ -21,20 +23,29 @@ const options = ServiceOptions.fromPartial({
 
 export async function vaccineDemo() {
     // createService() {
-    const trinsic = new TrinsicService(options);
+    const trinsic = new TrinsicService();
     // }
 
-		console.log("trinsic", trinsic);
+    trinsic.options.authToken = "CiVodHRwczovL3RyaW5zaWMuaWQvc2VjdXJpdHkvdjEvb2Jlcm9uEoMBCip1cm46dHJpbnNpYzp3YWxsZXRzOlZHMzZtNGI1V1FjeUJOSjZud1hoU2cSJGM3ZjljMTE1LTRmM2MtNGM5NC1iMTVjLTUyODRhMzAzZjE0NCIvdXJuOnRyaW5zaWM6ZWNvc3lzdGVtczpjbGV2ZXItbW9zZXItYUF4QkZQTFZUeDMaMKpbVJRE_Liv3RQG6cPfNYCXXScEA8sD000z4glK77xtLMqgopuMyvY1y8sETDjAGiIA";
+
+    console.log("trinsic", trinsic);
 
     // createEcosystem() {
+        // let ecosystem = await trinsic.provider().createEcosystem(
+        //     CreateEcosystemRequest.fromPartial({
+        //         description: "Test ecosystem from Node",
+        //         uri: "https://example.com",
+        //     })
+        // );
+
     const ecosystem = await trinsic
         .provider()
         .createEcosystem(CreateEcosystemRequest.fromPartial({}));
     const ecosystemId = ecosystem.ecosystem!.id;
     // }
 
-		console.log("ecosystem", ecosystem);
-		console.log("ecosystemId", ecosystem);
+		// console.log("ecosystem", ecosystem);
+		// console.log("ecosystemId", ecosystem);
 
     // setupActors() {
     // Create 3 different profiles for each participant in the scenario
